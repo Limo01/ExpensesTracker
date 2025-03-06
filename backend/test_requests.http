@@ -1,0 +1,14 @@
+############ 
+# Expenses #
+############
+
+# Add new expense
+POST http://127.0.0.1:5000/expenses HTTP/1.1
+Content-Type: application/json
+
+{"amount" : 110, "category": "varie", "description" : "volo A/R Berlino-Venezia", "date" : "2022-01-01T22:11:55.172+00:00"}
+
+###
+
+# Get all the expenses for the given date interval
+GET http://127.0.0.1:5000/expenses?start_date=2020-02-01&end_date=2025-03-01 HTTP/1.1
