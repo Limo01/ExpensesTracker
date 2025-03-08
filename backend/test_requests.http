@@ -41,3 +41,8 @@ GET http://127.0.0.1:5000/expenses?start_date=2025-03-01&end_date=2025-03-31 HTT
 
 # Get all the expenses from start_date onwards
 GET http://127.0.0.1:5000/expenses?start_date=2023-02-01 HTTP/1.1
+
+###
+
+# Delete an expense given its id
+DELETE http://127.0.0.1:5000/expenses/67cc87d81151765184fa5623 HTTP/1.1

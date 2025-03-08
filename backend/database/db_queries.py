@@ -1,5 +1,7 @@
 from database.db_connection import get_mongoDB_database
 
+from bson import ObjectId
+
 from datetime import datetime
 
 """
@@ -13,3 +15,11 @@ def get_expenses_by_interval(start_date: datetime, end_date: datetime):
     })
 
     return cursor
+
+"""
+Delete an expense from the database given its id
+"""
+def delete_expense_by_id(expense_id: str):
+    db = get_mongoDB_database()
+    
+    db["expenses"].delete_one({"_id": ObjectId(expense_id)})
