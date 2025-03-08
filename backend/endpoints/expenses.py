@@ -12,6 +12,8 @@ from data_models.Expense import Expense
 
 from json import dumps
 
+from datetime import datetime
+
 """
 Insert a new expense inside the DB. The expense has the following features 
 (to be passed in the JSON):
@@ -48,12 +50,9 @@ Query field:
 def get_expenses():
     try:
         start_date = parser.parse(request.args.get("start_date"))
-        end_date = parser.parse(request.args.get("end_date"))
+        end_date = parser.parse(request.args.get("end_date", default=str(datetime.today())))
     except:
         return BAD_REQUEST
-    
-    print(start_date)
-    print(end_date)
 
     expenses = list(get_expenses_by_interval(start_date=start_date, end_date=end_date))
 
