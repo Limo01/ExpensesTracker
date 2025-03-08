@@ -9,6 +9,7 @@ from database.db_queries import get_expenses_by_interval, delete_expense_by_id
 from dateutil import parser
 
 from data_models.expense import Expense
+from collections import defaultdict
 
 from json import dumps
 
@@ -52,9 +53,14 @@ def get_expenses():
     except:
         return BAD_REQUEST
 
-    expenses = list(get_expenses_by_interval(start_date=start_date, end_date=end_date))
+    cursor = get_expenses_by_interval(start_date=start_date, end_date=end_date)
 
-    return dumps(expenses, default=str)
+    expenses_by_category = defaultdict(list)
+
+    for expense in cursor:
+        expenses_by_category[expense["category"]].append(expense)
+
+    return dumps(expenses_by_category, default=str)
 
 """
 Delete an expense from the database given its id.

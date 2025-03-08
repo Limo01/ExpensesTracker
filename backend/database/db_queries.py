@@ -5,8 +5,7 @@ from bson import ObjectId
 from datetime import datetime
 
 """
-Returns all the Expenses for the given interval (start_date inclusive, end_date exclusive)
-divided by category.
+Returns all the Expenses for the given interval (start_date inclusive, end_date exclusive).
 """
 def get_expenses_by_interval(start_date: datetime, end_date: datetime):
     db = get_mongoDB_database()
