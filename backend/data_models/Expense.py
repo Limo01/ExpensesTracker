@@ -1,5 +1,5 @@
 from datetime import datetime, time
-from backend.utils.dates_functions import parse_date
+from utils.dates_functions import parse_date
 
 """
 Expense fields:
