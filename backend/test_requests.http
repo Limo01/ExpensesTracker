@@ -35,4 +35,9 @@ Content-Type: application/json
 ###
 
 # Get all the expenses for the given date interval
-GET http://127.0.0.1:5000/expenses?start_date=2020-02-01&end_date=2025-03-01 HTTP/1.1
+GET http://127.0.0.1:5000/expenses?start_date=2025-03-01&end_date=2025-03-31 HTTP/1.1
+
+###
+
+# Get all the expenses from start_date onwards
+GET http://127.0.0.1:5000/expenses?start_date=2023-02-01 HTTP/1.1
