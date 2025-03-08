@@ -1,0 +1,33 @@
+###########################
+### AddIncome endpoint ###
+###########################
+
+# Add new income: all fields
+POST http://127.0.0.1:5000/incomes HTTP/1.1
+Content-Type: application/json
+
+{"amount" : 2000, "description" : "Lorem Ipsum", "date" : "2025-01-20"}
+
+###
+
+# Add new income: only mandatory fields
+POST http://127.0.0.1:5000/incomes HTTP/1.1
+Content-Type: application/json
+
+{"amount" : 2500}
+
+###
+
+# Add new income: amount and date
+POST http://127.0.0.1:5000/incomes HTTP/1.1
+Content-Type: application/json
+
+{"amount" : 1500, "date" : "2025-01-20"}
+
+###
+
+# Add new income: amount and description
+POST http://127.0.0.1:5000/incomes HTTP/1.1
+Content-Type: application/json
+
+{"amount" : 1800, "description" : "Lorem Ipsum 2"}
