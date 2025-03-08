@@ -8,7 +8,7 @@ from database.db_queries import get_expenses_by_interval, delete_expense_by_id
 
 from dateutil import parser
 
-from data_models.Expense import Expense
+from data_models.expense import Expense
 
 from json import dumps
 
