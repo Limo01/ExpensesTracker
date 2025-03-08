@@ -1,5 +1,5 @@
 from datetime import datetime, time
-from dateutil import parser
+from backend.utils.dates_functions import parse_date
 
 """
 Expense fields:
@@ -16,13 +16,8 @@ class Expense(object):
                  description: str=None):
         self.category = category
         self.amount = amount
-        self.date = Expense.parse_date(date)
+        self.date = parse_date(date)
 
         if description is not None:
             self.description = description
-    
-    def parse_date(date: object) -> datetime:
-        if not isinstance(date, datetime):
-            return parser.parse(date)
-        return date
     
