@@ -27,8 +27,6 @@ Insert a new expense inside the DB. The expense has the following features
 def add_expense():
     request_json = request.get_json()
 
-    expense = Expense(**request_json)
-
     try:
         expense = Expense(**request_json)
     except:
