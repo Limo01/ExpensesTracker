@@ -43,3 +43,10 @@ GET http://127.0.0.1:5000/incomes?start_date=2025-03-01&end_date=2025-03-31 HTTP
 
 # Get all the incomes from start_date onwards
 GET http://127.0.0.1:5000/incomes?start_date=2023-02-01 HTTP/1.1
+
+#############################
+### DeleteIncome endpoint ###
+#############################
+
+# Delete an income given its id
+DELETE http://127.0.0.1:5000/incomes/67cc93e58bf3402b3f245d98 HTTP/1.1

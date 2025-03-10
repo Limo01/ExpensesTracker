@@ -4,7 +4,7 @@ from flask import request
 from constants.api_messages import OK, BAD_REQUEST
 
 from database.db_connection import insert_mongoDB_document
-from database.db_queries import get_incomes_by_interval
+from database.db_queries import get_incomes_by_interval, delete_income_by_id
 
 from dateutil import parser
 
@@ -54,3 +54,15 @@ def get_incomes():
     incomes = list(get_incomes_by_interval(start_date=start_date, end_date=end_date))
 
     return dumps(incomes, default=str)
+
+"""
+Delete an income from the database given its id.
+"""
+@app.route("/incomes/<income_id>", methods=["DELETE"])
+def delete_income(income_id):
+    try:
+        delete_income_by_id(income_id)
+    except:
+        return BAD_REQUEST
+    
+    return OK

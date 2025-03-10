@@ -35,3 +35,11 @@ def get_incomes_by_interval(start_date: datetime, end_date: datetime):
     })
 
     return cursor
+
+"""
+Delete an income from the database given its id.
+"""
+def delete_income_by_id(income_id: str):
+    db = get_mongoDB_database()
+    
+    db["incomes"].delete_one({"_id": ObjectId(income_id)})
