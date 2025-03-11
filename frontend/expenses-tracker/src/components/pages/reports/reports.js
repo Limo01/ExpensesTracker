@@ -1,5 +1,5 @@
 import React from "react";
-import "./pages.css";
+import "../pages.css";
 
 function ReportPage() {
   return (

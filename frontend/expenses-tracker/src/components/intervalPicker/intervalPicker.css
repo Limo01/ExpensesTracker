@@ -1,0 +1,13 @@
+.intervalPicker {
+    margin-top: 1.1em;
+    margin-left: 1.5em;
+    font-size: 1.5em;
+}
+
+.intervalPicker label {
+    margin-right: 0.6em;
+}
+
+.intervalPicker input {
+    margin-right: 4em;
+}

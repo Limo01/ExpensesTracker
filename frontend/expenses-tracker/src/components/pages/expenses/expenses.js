@@ -1,10 +1,11 @@
 import React from "react";
-import "./pages.css";
+import "../pages.css";
+import IntervalPicker from "../../intervalPicker/intervalPicker";
 
 function ExpensesPage() {
   return (
     <div className="page" id="expensesPage">
-      <h1>Expenses</h1>
+      <IntervalPicker />
     </div>
   );
 }

@@ -5,8 +5,8 @@ import {
   RouterProvider,
   Outlet
 } from "react-router-dom";
-import ExpensesPage from "./components/pages/expenses";
-import ReportsPage from "./components/pages/reports";
+import ExpensesPage from "./components/pages/expenses/expenses";
+import ReportsPage from "./components/pages/reports/reports";
 import Navbar from "./components/navbar/navbar";
 import "./index.css";
 
