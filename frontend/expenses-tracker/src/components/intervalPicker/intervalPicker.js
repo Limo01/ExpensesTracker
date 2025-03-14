@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./intervalPicker.css"
 
-function IntervalPicker() {
-  const [startDate, setStartDate] = useState(getTodayDate());
-  const [endDate, setEndDate] = useState(getBeginningOfCurrentMonthDate());
+function IntervalPicker({onButtonClick}) {
+  const [startDate, setStartDate] = useState(getBeginningOfCurrentMonthDate());
+  const [endDate, setEndDate] = useState(getTodayDate());
   
   function getTodayDate() {
     return new Date().toISOString().substring(0, 10);
@@ -25,10 +25,12 @@ function IntervalPicker() {
   return (
     <div className="intervalPicker">
       <label>Start date:</label>
-      <input type="date" value={startDate} onChange = {(e) => {setStartDate(e.target.value); console.log(e.target.value)}}/>
+      <input type="date" value={startDate} onChange = {(e) => {setStartDate(e.target.value);}}/>
       
       <label>End date:</label>
-      <input type="date" value={endDate} onChange = {(e) => {setEndDate(e.target.value); console.log(e.target.value)}}/>
+      <input type="date" value={endDate} onChange = {(e) => {setEndDate(e.target.value);}}/>
+
+      <button onClick = {(e) => {onButtonClick(startDate, endDate);}}>Load Data</button>
     </div>
   );
 }
