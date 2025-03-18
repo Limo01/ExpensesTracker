@@ -12,7 +12,7 @@ def get_expenses_by_interval(start_date: datetime, end_date: datetime):
     
     cursor = db["expenses"].find({
         "date" : {"$gte": start_date, "$lt": end_date}
-    })
+    }).sort({"date" : 1})
 
     return cursor
 
@@ -32,7 +32,7 @@ def get_incomes_by_interval(start_date: datetime, end_date: datetime):
     
     cursor = db["incomes"].find({
         "date" : {"$gte": start_date, "$lt": end_date}
-    })
+    }).sort({"date" : 1})
 
     return cursor
 
