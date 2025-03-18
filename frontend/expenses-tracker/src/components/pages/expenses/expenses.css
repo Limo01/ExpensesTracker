@@ -1,8 +1,12 @@
 #expensesLists {
     width: 40vw;
+    background-color: #f2f6fc;
+    border-radius: 1em;
 }
 
 #expensesLists h1 {
+    padding-top: 0.4em;
+    margin-bottom: 0.4em;
     width: 100%;
     text-align: center;
 }
