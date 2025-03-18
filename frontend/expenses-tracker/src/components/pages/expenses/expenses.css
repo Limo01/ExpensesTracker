@@ -1,0 +1,13 @@
+#expensesLists {
+    width: 40vw;
+}
+
+#expensesLists h1 {
+    width: 100%;
+    text-align: center;
+}
+
+#itemsLists {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,44 @@
+.itemsList {
+    width: 47%;
+    text-align: center;
+    padding: 1.5%;
+    margin: 1.5%;
+    background-color: grey;
+    border-radius: 1em;
+}
+
+.itemsList table {
+    width: 100%;
+    border-spacing: 0.4em;
+    margin-bottom: 0.2em;
+}
+
+.itemsList tbody {
+    font-size: 0.9em;;
+}
+
+.itemsList thead,
+.itemsList tbody {
+    display: block;
+}
+
+.itemsList thead tr th:first-child,
+.itemsList tbody tr td:first-child {
+    width: 25%;
+}
+
+.itemsList thead tr th:nth-child(3),
+.itemsList tbody tr td:nth-child(3) {
+    width: 20%;
+}
+
+tbody {
+    height: 14vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.itemsList .itemsTotal {
+    font-weight: bold;
+}
