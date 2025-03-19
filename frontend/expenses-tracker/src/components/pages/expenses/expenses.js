@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../pages.css";
 import "./expenses.css";
+
 import IntervalPicker from "../../intervalPicker/intervalPicker";
+import ItemsList from "../../itemsList/itemsList";
+import ItemAdder from "../../itemAdder/itemAdder";
 
 import { fetchExpensesForInterval } from "../../../api/expenses_api";
-import ItemsList from "../../itemsList/itemsList";
 
 import { getBeginningOfCurrentMonthDate, getTodayDate } from "../../../utils/dateFunctions";
 import { getTotalFromExpensesList } from "../../../utils/balanceCalculations";
@@ -38,7 +40,10 @@ function ExpensesPage() {
 
   return (
     <div className="page" id="expensesPage">
-      <IntervalPicker onButtonClick={onIntervalPickerChange}/>
+      <div id="expensesPageHeader">
+        <IntervalPicker onButtonClick={onIntervalPickerChange}/>
+        <ItemAdder/>
+      </div>
       <div id="expensesLists">
         <h1>Expenses</h1>
         <div id="itemsLists">
@@ -48,8 +53,7 @@ function ExpensesPage() {
                       title={category} 
                       data={categoriesData[index]} 
                       total={getTotalFromExpensesList(categoriesData[index])} 
-                      key={index}>
-                    </ItemsList>
+                      key={index}/>
           })
         }
         </div>
