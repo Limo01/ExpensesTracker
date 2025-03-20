@@ -1,5 +1,4 @@
 .intervalPicker {
-    font-size: 1.2em;
     padding: 0.5em;
     background-color: #f2f6fc;
     width: 35vw;
@@ -17,10 +16,12 @@
     padding: 1em;
     border: none;
     background-color: #fdfdfd;
+    font-size: revert;
 }
 
 .intervalPicker button {
     padding: 0.8em;
     border-radius: 2em;
     border: none;
+    font-size: revert;
 }

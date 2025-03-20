@@ -9,6 +9,8 @@ import ExpensesPage from "./components/pages/expenses/expenses";
 import ReportsPage from "./components/pages/reports/reports";
 import Navbar from "./components/navbar/navbar";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const AppLayout = () => (
   <>
