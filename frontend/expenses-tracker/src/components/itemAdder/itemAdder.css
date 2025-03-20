@@ -31,6 +31,11 @@
 
 .modal .modal-content {
     background-color: #f2f6fc;
+    border-radius: 0.8em;
+}
+
+.modal-footer .btn {
+    border-radius: 2em;
 }
 
 .modal-footer .btn-primary {
