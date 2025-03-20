@@ -23,8 +23,10 @@
     font-weight: 500;
 }
 
-.mb-3 .form-control {
+.mb-3 .form-control,
+.mb-3 .form-select {
     background-color: #fcfcfd;
+    border-radius: 1em;
 }
 
 .modal .modal-content {
