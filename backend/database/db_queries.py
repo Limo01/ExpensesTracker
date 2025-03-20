@@ -5,13 +5,13 @@ from bson import ObjectId
 from datetime import datetime
 
 """
-Returns all the Expenses for the given interval (start_date inclusive, end_date exclusive).
+Returns all the Expenses for the given interval (start_date inclusive, end_date inclusive).
 """
 def get_expenses_by_interval(start_date: datetime, end_date: datetime):
     db = get_mongoDB_database()
     
     cursor = db["expenses"].find({
-        "date" : {"$gte": start_date, "$lt": end_date}
+        "date" : {"$gte": start_date, "$lte": end_date}
     }).sort({"date" : 1})
 
     return cursor
@@ -25,13 +25,13 @@ def delete_expense_by_id(expense_id: str):
     db["expenses"].delete_one({"_id": ObjectId(expense_id)})
 
 """
-Returns all the Incomes for the given interval (start_date inclusive, end_date exclusive).
+Returns all the Incomes for the given interval (start_date inclusive, end_date inclusive).
 """
 def get_incomes_by_interval(start_date: datetime, end_date: datetime):
     db = get_mongoDB_database()
     
     cursor = db["incomes"].find({
-        "date" : {"$gte": start_date, "$lt": end_date}
+        "date" : {"$gte": start_date, "$lte": end_date}
     }).sort({"date" : 1})
 
     return cursor
