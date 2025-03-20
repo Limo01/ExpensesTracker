@@ -7,6 +7,7 @@ import ItemsList from "../../itemsList/itemsList";
 import ItemAdder from "../../itemAdder/itemAdder";
 
 import { fetchExpensesForInterval } from "../../../api/expenses_api";
+import { itemsCategories } from "../../../api/constants";
 
 import { getBeginningOfCurrentMonthDate, getTodayDate } from "../../../utils/dateFunctions";
 import { getTotalFromExpensesList } from "../../../utils/balanceCalculations";
@@ -35,14 +36,14 @@ function ExpensesPage() {
 
   function onIntervalPickerChange(startDate, endDate) {
     fetchExpensesForInterval(startDate, endDate)
-    .then(data => setData(data));;
+    .then(data => setData(data));
   }
 
   return (
     <div className="page" id="expensesPage">
       <div id="expensesPageHeader">
         <IntervalPicker onButtonClick={onIntervalPickerChange}/>
-        <ItemAdder/>
+        <ItemAdder itemsCategories={itemsCategories}/>
       </div>
       <div id="expensesLists">
         <h1>Expenses</h1>
