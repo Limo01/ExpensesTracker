@@ -31,3 +31,13 @@ export const addExpense = async (expenseData) => {
     throw error;
   }
 };
+
+export const addIncome = async (incomeData) => {
+  try {
+    const response = await instance.post("/incomes", incomeData)
+    return response.status;
+  } catch (error) {
+    console.error("Error adding data: ", error);
+    throw error;
+  }
+};

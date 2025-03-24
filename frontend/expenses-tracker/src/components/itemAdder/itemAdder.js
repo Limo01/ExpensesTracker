@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { getTodayDate } from "../../utils/dateFunctions";
-import { addExpense } from "../../api/expenses_api";
+import { addExpense, addIncome } from "../../api/expenses_api";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -37,12 +37,20 @@ function ItemAdder({itemsCategories, onItemAdd}) {
   }
 
   const handleAddItemClick = (e) => {
-    addExpense({
+    const addItem = (itemData) => {
+      if (itemData["category"] === "Incomes") {
+        delete itemData["category"];
+        return addIncome(itemData);
+      }
+      return addExpense(itemData);
+    };
+
+    addItem({
       "date" : modalDate,
       "category" : modalCategory,
       "description" : modalDescription,
       "amount" : modalAmount
-    }).then((e) => {
+    }).then(() => {
       onItemAdd();
       handleCloseModal();
     });
