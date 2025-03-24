@@ -2,6 +2,7 @@
     width: 47%;
     text-align: center;
     padding: 1.5%;
+    padding-left: 2.5%;
     margin: 1.5%;
     background-color: #fcfcfd;
     border-radius: 1em;
@@ -14,7 +15,7 @@
 .itemsList table {
     width: 100%;
     border-spacing: 0.4em;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.8em;
 }
 
 .itemsList tbody {
@@ -37,7 +38,7 @@
 }
 
 tbody {
-    height: 14vh;
+    height: 12vh;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
