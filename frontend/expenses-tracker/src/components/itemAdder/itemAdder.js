@@ -1,12 +1,13 @@
 import { React, useState } from "react";
 import { getTodayDate } from "../../utils/dateFunctions";
+import { addExpense } from "../../api/expenses_api";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { IoAddOutline } from "react-icons/io5";
 import "./itemAdder.css";
 
-function ItemAdder({itemsCategories}) {
+function ItemAdder({itemsCategories, }) {
   const [showModal, setShowModal] = useState(false);
 
   const initialModalState = {
@@ -33,6 +34,17 @@ function ItemAdder({itemsCategories}) {
   const handleCloseModal = () => {
     setShowModal(false); 
     resetToInitialState(); 
+  }
+
+  const handleAddItemClick = (e) => {
+    addExpense({
+      "date" : modalDate,
+      "category" : modalCategory,
+      "description" : modalDescription,
+      "amount" : modalAmount
+    }).then((e) => {
+      handleCloseModal();
+    });
   }
 
   return (
@@ -88,7 +100,7 @@ function ItemAdder({itemsCategories}) {
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleCloseModal}>
+          <Button variant="primary" onClick={handleAddItemClick}>
             Add Item
           </Button>
         </Modal.Footer>
