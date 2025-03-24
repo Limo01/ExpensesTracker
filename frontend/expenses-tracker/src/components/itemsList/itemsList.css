@@ -18,8 +18,16 @@
     margin-bottom: 0.8em;
 }
 
+.itemsList thead th {
+    font-weight: 500;
+}
+
 .itemsList tbody {
-    font-size: 0.9em;;
+    font-size: 0.9em;
+    height: 12vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
 }
 
 .itemsList thead,
@@ -35,13 +43,6 @@
 .itemsList thead tr th:nth-child(3),
 .itemsList tbody tr td:nth-child(3) {
     width: 20%;
-}
-
-tbody {
-    height: 12vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: thin;
 }
 
 .itemsList .itemsTotal {
