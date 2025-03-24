@@ -16,6 +16,11 @@ function ExpensesPage() {
   const [categories, setCategories] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
 
+  const [dateInterval, setDateInterval] = useState({
+    "startDate" : getBeginningOfCurrentMonthDate(),
+    "endDate" : getTodayDate()
+  })
+
   function setData(data) {
     let categories = Object.keys(data);
     let categoriesData = [];
@@ -30,11 +35,16 @@ function ExpensesPage() {
 
   useEffect(() => {
     fetchExpensesForInterval(
-      getBeginningOfCurrentMonthDate(), getTodayDate())
+      dateInterval.startDate, dateInterval.endDate)
     .then(data => setData(data));
-  }, []);
+  }, [dateInterval]);
 
   function onIntervalPickerChange(startDate, endDate) {
+    setDateInterval({
+      "startDate" : startDate,
+      "endDate" : endDate
+    });
+
     fetchExpensesForInterval(startDate, endDate)
     .then(data => setData(data));
   }
