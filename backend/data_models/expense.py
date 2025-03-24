@@ -14,8 +14,8 @@ class Expense(object):
                  amount: float, 
                  date: datetime=datetime.combine(datetime.today(), time.min),
                  description: str=None):
-        self.category = category
-        self.amount = amount
+        self.category = str(category)
+        self.amount = float(amount)
         self.date = parse_date(date)
 
         if description is not None:

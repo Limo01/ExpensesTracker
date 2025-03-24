@@ -12,9 +12,9 @@ class Income(object):
                  amount: float, 
                  date: datetime=datetime.combine(datetime.today(), time.min),
                  description: str=None):
-        self.amount = amount
+        self.amount = float(amount)
         self.date = parse_date(date)
 
         if description is not None:
-            self.description = description
+            self.description = str(description)
     
