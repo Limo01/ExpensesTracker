@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { IoAddOutline } from "react-icons/io5";
 import "./itemAdder.css";
 
-function ItemAdder({itemsCategories, }) {
+function ItemAdder({itemsCategories, onItemAdd}) {
   const [showModal, setShowModal] = useState(false);
 
   const initialModalState = {
@@ -43,6 +43,7 @@ function ItemAdder({itemsCategories, }) {
       "description" : modalDescription,
       "amount" : modalAmount
     }).then((e) => {
+      onItemAdd();
       handleCloseModal();
     });
   }

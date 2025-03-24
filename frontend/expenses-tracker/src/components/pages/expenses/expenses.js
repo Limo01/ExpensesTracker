@@ -7,36 +7,35 @@ import ItemsList from "../../itemsList/itemsList";
 import ItemAdder from "../../itemAdder/itemAdder";
 
 import { fetchExpensesForInterval } from "../../../api/expenses_api";
-import { itemsCategories } from "../../../api/constants";
+import { itemsCategories, expensesCategories } from "../../../api/constants";
 
 import { getBeginningOfCurrentMonthDate, getTodayDate } from "../../../utils/dateFunctions";
 import { getTotalFromExpensesList } from "../../../utils/balanceCalculations";
 
 function ExpensesPage() {
-  const [categories, setCategories] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
 
   const [dateInterval, setDateInterval] = useState({
     "startDate" : getBeginningOfCurrentMonthDate(),
     "endDate" : getTodayDate()
-  })
+  });
 
-  function setData(data) {
-    let categories = Object.keys(data);
+  function processAndSetExpensesData(data) {
     let categoriesData = [];
 
-    categories.forEach((category) => {
-      categoriesData.push(data[category]);
+    expensesCategories.forEach((category) => {
+      if (data[category] === undefined) {
+        categoriesData.push([]);
+      } else {
+        categoriesData.push(data[category]);
+      }
     });
 
-    setCategories(categories);
     setCategoriesData(categoriesData);
   }
 
   useEffect(() => {
-    fetchExpensesForInterval(
-      dateInterval.startDate, dateInterval.endDate)
-    .then(data => setData(data));
+    fetchExpensesData();
   }, [dateInterval]);
 
   function onIntervalPickerChange(startDate, endDate) {
@@ -44,26 +43,35 @@ function ExpensesPage() {
       "startDate" : startDate,
       "endDate" : endDate
     });
+  }
 
-    fetchExpensesForInterval(startDate, endDate)
-    .then(data => setData(data));
+  function fetchExpensesData() {
+    fetchExpensesForInterval(
+      dateInterval.startDate, dateInterval.endDate)
+    .then(data => processAndSetExpensesData(data));
   }
 
   return (
     <div className="page" id="expensesPage">
       <div id="expensesPageHeader">
         <IntervalPicker onButtonClick={onIntervalPickerChange}/>
-        <ItemAdder itemsCategories={itemsCategories}/>
+        <ItemAdder itemsCategories={itemsCategories} onItemAdd={fetchExpensesData}/>
       </div>
       <div id="expensesLists">
         <h1>Expenses</h1>
         <div id="itemsLists">
         {
-          categories.map((category, index) => {
+          expensesCategories.map((category, index) => {
             return <ItemsList 
                       title={category} 
-                      data={categoriesData[index]} 
-                      total={getTotalFromExpensesList(categoriesData[index])} 
+                      data={
+                        categoriesData[index] === undefined? 
+                          [] : 
+                          categoriesData[index]} 
+                      total={
+                        categoriesData[index] === undefined? 
+                          parseFloat(0).toFixed(2) : 
+                          getTotalFromExpensesList(categoriesData[index])} 
                       key={index}/>
           })
         }

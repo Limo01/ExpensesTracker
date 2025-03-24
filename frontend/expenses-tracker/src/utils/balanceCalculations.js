@@ -5,5 +5,5 @@ export function getTotalFromExpensesList(expenses) {
         total += expense.amount;
     });
 
-    return total;
+    return total.toFixed(2);
 }
