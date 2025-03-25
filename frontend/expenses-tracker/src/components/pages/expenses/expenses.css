@@ -23,7 +23,7 @@
     font-size: 1.8em;
 }
 
-#itemsLists {
+.itemsLists {
     display: flex;
     flex-wrap: wrap;
 }

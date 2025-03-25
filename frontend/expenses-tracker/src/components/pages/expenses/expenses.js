@@ -59,7 +59,7 @@ function ExpensesPage() {
       </div>
       <div id="expensesLists">
         <h1>Expenses</h1>
-        <div id="itemsLists">
+        <div class="itemsLists">
         {
           expensesCategories.map((category, index) => {
             return <ItemsList 
