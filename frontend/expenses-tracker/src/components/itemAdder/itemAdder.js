@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { getTodayDate } from "../../utils/dateFunctions";
-import { addExpense, addIncome } from "../../api/expenses_api";
+import { addExpense } from "../../api/expensesApi";
+import { addIncome } from "../../api/incomesApi";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

@@ -6,16 +6,26 @@
 
 #expensesPageHeader .itemAdder {
     margin-left: auto;
-    margin-right: 5vw;
 }
 
-#expensesLists {
-    width: 40vw;
+#expensePageBody {
+    display: flex;
+}
+
+#expensesLists,
+#incomesLists {
+    width: 40.5vw;
     background-color: #f2f6fc;
     border-radius: 1em;
 }
 
-#expensesLists h1 {
+#incomesLists {
+    margin-left: auto;
+    height: fit-content;
+}
+
+#expensesLists h1,
+#incomesLists h1 {
     padding-top: 0.4em;
     margin-bottom: 0.4em;
     width: 100%;
@@ -26,4 +36,9 @@
 .itemsLists {
     display: flex;
     flex-wrap: wrap;
+}
+
+#incomesLists .itemsLists div.itemsList {
+    margin: auto;
+    margin-bottom: 1.5%;
 }
