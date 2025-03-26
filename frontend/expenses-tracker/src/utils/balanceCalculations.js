@@ -1,8 +1,8 @@
-export function getTotalFromExpensesList(expenses) {
+export function getTotalFromItemsList(items) {
     let total = 0;
 
-    expenses.forEach(expense => {
-        total += expense.amount;
+    items.forEach(item => {
+        total += item.amount;
     });
 
     return total.toFixed(2);
