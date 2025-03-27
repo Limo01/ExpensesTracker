@@ -13,19 +13,20 @@
 }
 
 #expensesLists,
-#incomesLists {
+#incomesLists,
+#statistics {
     width: 40.5vw;
     background-color: #f2f6fc;
     border-radius: 1em;
 }
 
 #incomesLists {
-    margin-left: auto;
-    height: fit-content;
+    margin-bottom: 1.5em;
 }
 
 #expensesLists h1,
-#incomesLists h1 {
+#incomesLists h1,
+#statistics h1 {
     padding-top: 0.4em;
     margin-bottom: 0.4em;
     width: 100%;
@@ -41,4 +42,17 @@
 #incomesLists .itemsLists div.itemsList {
     margin: auto;
     margin-bottom: 1.5%;
+}
+
+#calculations {
+    margin-left: auto;
+}
+
+#statistics {
+    padding: 3%;
+    padding-bottom: 0;
+}
+
+#statistics h1 {
+    padding-top: 0.05em;
 }

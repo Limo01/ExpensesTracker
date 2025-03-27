@@ -1,0 +1,48 @@
+:root {
+    --green: rgb(34, 107, 34);
+    --red: rgb(170, 22, 22);
+}
+
+.itemsStatistics {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.totalsStatistics {
+    width: 30%;
+    padding: 1.5%;
+    background-color: #fcfcfd;
+    border-radius: 1em;
+    height: fit-content;
+}
+
+.totalsStatistics p {
+    display: block;
+    padding-left: 2%;
+    font-weight: 600;
+}
+
+div.totalsStatistics p:last-child {
+    margin-bottom: 0;
+}
+
+.totalsStatistics p span {
+    font-weight: normal;
+}
+
+#totalIncomes {
+    color: var(--green);
+}
+
+#totalExpenses {
+    color: var(--red);
+}
+
+.profitBalance {
+    color: var(--green)
+}
+
+.lossBalance {
+    color: var(--red)
+}

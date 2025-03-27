@@ -5,6 +5,7 @@ import "./expenses.css";
 import IntervalPicker from "../../intervalPicker/intervalPicker";
 import ItemsList from "../../itemsList/itemsList";
 import ItemAdder from "../../itemAdder/itemAdder";
+import ItemsStatistics from "../../itemsStatistics/itemsStatistics";
 
 import { fetchExpensesForInterval } from "../../../api/expensesApi";
 import { fetchIncomesForInterval } from "../../../api/incomesApi"; 
@@ -39,6 +40,8 @@ function ExpensesPage() {
   useEffect(() => {
     fetchExpensesData();
     fetchIncomsesData();
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dateInterval]);
 
   function onIntervalPickerChange(startDate, endDate) {
@@ -74,7 +77,7 @@ function ExpensesPage() {
       <div id="expensePageBody">
         <div id="expensesLists">
           <h1>Expenses</h1>
-          <div class="itemsLists">
+          <div className="itemsLists">
           {
             expensesCategories.map((category, index) => {
               return <ItemsList 
@@ -92,19 +95,22 @@ function ExpensesPage() {
           }
           </div>
         </div>
-        <div id="incomesLists">
-          <h1>Incomes</h1>
-          <div class="itemsLists" id="A">
-            <ItemsList 
-              title="" 
-              data={
-                incomesData === undefined? 
-                  [] : 
-                  incomesData} 
-              total={
-                incomesData === undefined? 
-                  parseFloat(0).toFixed(2) : 
-                  getTotalFromItemsList(incomesData)}/>
+        <div id="calculations">
+          <div id="incomesLists">
+            <h1>Incomes</h1>
+            <div className="itemsLists">
+              <ItemsList 
+                title="" 
+                data={incomesData} 
+                total={getTotalFromItemsList(incomesData)}/>
+            </div>
+          </div>
+          <div id="statistics">
+            <h1>Statistics</h1>
+            <ItemsStatistics 
+              expensesData={categoriesData} 
+              incomesData={incomesData}
+              expensesCategories={expensesCategories}/>
           </div>
         </div>
       </div>
