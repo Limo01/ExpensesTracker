@@ -10,6 +10,7 @@
 
 #expensePageBody {
     display: flex;
+    margin-top: 2em;
 }
 
 #expensesLists,
