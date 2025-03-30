@@ -1,9 +1,13 @@
+import { MdEdit } from "react-icons/md";
 import "./itemsList.css"
 
 function ItemsList({title, data, total}) {
   return (
     <div className="itemsList">
-      <h2>{title}</h2>
+      <div className="itemsListHeader">
+        <h2>{title}</h2>
+        <button><MdEdit/></button>
+      </div>
       <table>
         <thead>
           <tr>

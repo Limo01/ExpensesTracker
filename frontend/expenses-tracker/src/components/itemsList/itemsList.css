@@ -8,8 +8,23 @@
     border-radius: 1em;
 }
 
-.itemsList h2 {
+.itemsListHeader {
+    display: flex;
+    align-items: center;
+}
+
+.itemsListHeader h2 {
     font-size: 1.5em;
+    margin-left: auto;
+}
+
+.itemsListHeader button {
+    margin-left: auto;
+    margin-bottom: .5rem;
+    width: 2em;
+    height: 2em;
+    border: none;
+    border-radius: 1em;
 }
 
 .itemsList table {
