@@ -8,12 +8,13 @@ import Form from 'react-bootstrap/Form';
 import { IoAddOutline } from "react-icons/io5";
 import "./itemAdder.css";
 
-function ItemAdder({itemsCategories, onItemAdd}) {
+function ItemAdder({itemsCategories, onItemAdd, defaultCategory}) {
   const [showModal, setShowModal] = useState(false);
 
   const initialModalState = {
     date : getTodayDate(),
-    category: itemsCategories[0],
+    category: defaultCategory === undefined ? 
+                itemsCategories[0] : defaultCategory,
     description: "",
     amount: parseFloat(0).toFixed(2)
   };

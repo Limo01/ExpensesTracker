@@ -99,6 +99,8 @@ function ExpensesPage() {
                             parseFloat(0).toFixed(2) : 
                             getTotalFromItemsList(categoriesData[index])}
                         onItemDelete={onExpenseDeleteCallback}
+                        onItemAdd={onItemAddCallback}
+                        itemsCategories={itemsCategories}
                         key={index}/>
             })
           }
@@ -106,13 +108,15 @@ function ExpensesPage() {
         </div>
         <div id="calculations">
           <div id="incomesLists">
-            <h1>Incomes</h1>
+            <h1>Earnings</h1>
             <div className="itemsLists">
               <ItemsList 
-                title="" 
+                title="Incomes" 
                 data={incomesData} 
                 total={getTotalFromItemsList(incomesData)}
                 onItemDelete={onIncomeDeleteCallback}
+                onItemAdd={onItemAddCallback}
+                itemsCategories={itemsCategories}
                 deleterType="income"/>
             </div>
           </div>

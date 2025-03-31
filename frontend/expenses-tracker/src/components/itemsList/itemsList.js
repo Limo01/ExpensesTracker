@@ -1,16 +1,21 @@
-import { MdEdit } from "react-icons/md";
-import "./itemsList.css"
+import ItemAdder from "../itemAdder/itemAdder";
 import ItemDeleter from "../itemDeleter/itemDeleter";
+import "./itemsList.css"
 
-function ItemsList({title, data, total, onItemDelete, deleterType="expense"}) {
+
+function ItemsList({title, data, total, onItemDelete, onItemAdd, itemsCategories, deleterType="expense"}) {
   return (
     <div className="itemsList">
       <div className="itemsListHeader">
-        <h2>{title}</h2>
+        <ItemAdder 
+          itemsCategories={itemsCategories}
+          onItemAdd={onItemAdd}
+          defaultCategory={title}/>
         <ItemDeleter 
           data={data}
           onItemDelete={onItemDelete}
           deleterType={deleterType}/>
+        <h2>{title}</h2>
       </div>
       <table>
         <thead>
