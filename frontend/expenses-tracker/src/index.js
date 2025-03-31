@@ -6,7 +6,7 @@ import {
   Outlet
 } from "react-router-dom";
 import ExpensesPage from "./components/pages/expenses/expenses";
-import ReportsPage from "./components/pages/reports/reports";
+//import ReportsPage from "./components/pages/reports/reports";
 import Navbar from "./components/navbar/navbar";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,10 +27,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <ExpensesPage />,
       },
-      {
-        path: "/Reports",
-        element: <ReportsPage />,
-      }
+      //{
+      //  path: "/Reports",
+      //  element: <ReportsPage />,
+      //}
     ],
   },
 ]);

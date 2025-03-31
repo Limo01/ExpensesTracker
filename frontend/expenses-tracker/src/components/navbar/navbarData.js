@@ -1,6 +1,6 @@
 import React from "react";
 import { TbMoneybag } from "react-icons/tb";
-import { TbReportMoney } from "react-icons/tb";
+//import { TbReportMoney } from "react-icons/tb";
 
 export const NavbarData = [
   {
@@ -9,10 +9,10 @@ export const NavbarData = [
     icon: <TbMoneybag />,
     cName: "nav-text",
   },
-  {
-    title: "Reports",
-    path: "/reports",
-    icon: <TbReportMoney />,
-    cName: "nav-text",
-  }
+  //{
+  //  title: "Reports",
+  //  path: "/reports",
+  //  icon: <TbReportMoney />,
+  //  cName: "nav-text",
+  //}
 ];
