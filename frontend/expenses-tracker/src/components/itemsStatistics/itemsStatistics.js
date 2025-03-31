@@ -17,6 +17,12 @@ function ItemsStatistics({expensesData, incomesData, expensesCategories}) {
     let stats = [];
     let key = 0;
 
+    stats.push({
+      key: key,
+      value: getTotalFromItemsList(incomesData, false),
+      label: "Incomes"
+    });
+
     expensesCategories.forEach(expenseCategory => {
       stats.push({
         key: key,
@@ -26,12 +32,6 @@ function ItemsStatistics({expensesData, incomesData, expensesCategories}) {
 
       key++;
     })
-    
-    stats.push({
-      key: key,
-      value: getTotalFromItemsList(incomesData, false),
-      label: "Incomes"
-    });
     
     return stats;
   }
@@ -58,6 +58,8 @@ function ItemsStatistics({expensesData, incomesData, expensesCategories}) {
             outerRadius: 70,
             highlightScope: { fade: 'global', highlight: 'item' },
             faded: { color: 'gray' },
+            startAngle: 0,
+            endAngle: -360
           }]}
           width={450}
           height={200}
