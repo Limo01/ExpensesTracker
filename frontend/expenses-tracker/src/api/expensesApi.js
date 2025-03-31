@@ -24,3 +24,13 @@ export const addExpense = async (expenseData) => {
     throw error;
   }
 };
+
+export const deleteExpense = async (expenseId) => {
+  try {
+    const response = await instance.delete("/expenses/" + expenseId)
+    return response.status;
+  } catch (error) {
+    console.error("Error adding data: ", error);
+    throw error;
+  }
+};

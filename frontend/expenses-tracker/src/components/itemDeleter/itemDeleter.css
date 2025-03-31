@@ -1,0 +1,40 @@
+.itemDeleter {
+    margin-left: auto;
+}
+
+table.itemDeleterTable {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+table.itemDeleterTable thead tr {
+    font-weight: 500;
+}
+
+table.itemDeleterTable tbody {
+    font-size: 0.9em;
+}
+
+.itemDeleter button,
+.itemDeleteButton {
+    margin-bottom: .3rem;
+    width: 2em;
+    height: 2em;
+    border: none;
+    border-radius: 1em;
+}
+
+.itemDeleteButton {
+    margin-top: .3rem;
+    width: 1.8em;
+    height: 1.8em;
+}
+
+.itemDeleteButton svg {
+    margin-bottom: .2rem;
+}
+
+.itemDeleter svg {
+    margin-bottom: .2rem;
+}

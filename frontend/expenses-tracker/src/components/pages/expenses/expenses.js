@@ -68,6 +68,14 @@ function ExpensesPage() {
     fetchIncomsesData();
   }
 
+  function onExpenseDeleteCallback(expenseId) {
+    fetchExpensesData();
+  }
+
+  function onIncomeDeleteCallback() {
+    fetchIncomsesData();
+  }
+
   return (
     <div className="page" id="expensesPage">
       <div id="expensesPageHeader">
@@ -89,7 +97,8 @@ function ExpensesPage() {
                         total={
                           categoriesData[index] === undefined? 
                             parseFloat(0).toFixed(2) : 
-                            getTotalFromItemsList(categoriesData[index])} 
+                            getTotalFromItemsList(categoriesData[index])}
+                        onItemDelete={onExpenseDeleteCallback}
                         key={index}/>
             })
           }
@@ -102,7 +111,9 @@ function ExpensesPage() {
               <ItemsList 
                 title="" 
                 data={incomesData} 
-                total={getTotalFromItemsList(incomesData)}/>
+                total={getTotalFromItemsList(incomesData)}
+                onItemDelete={onIncomeDeleteCallback}
+                deleterType="income"/>
             </div>
           </div>
           <div id="statistics">

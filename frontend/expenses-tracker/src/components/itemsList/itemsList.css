@@ -18,18 +18,8 @@
     margin-left: auto;
 }
 
-.itemsListHeader button {
-    margin-left: auto;
-    margin-bottom: .5rem;
-    width: 2em;
-    height: 2em;
-    border: none;
-    border-radius: 1em;
-}
-
 .itemsList table {
     width: 100%;
-    border-spacing: 0.4em;
     margin-bottom: 0.8em;
 }
 
@@ -62,4 +52,13 @@
 
 .itemsList .itemsTotal {
     font-weight: 600;
+}
+
+.itemsList thead tr {
+    display: block;
+    margin-left: 0.5em;
+}
+
+.itemsList thead tr th:first-child {
+    text-align: left;
 }

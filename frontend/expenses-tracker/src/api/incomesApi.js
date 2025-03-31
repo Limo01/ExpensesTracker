@@ -24,3 +24,13 @@ export const addIncome = async (incomeData) => {
     throw error;
   }
 };
+
+export const deleteIncome = async (incomeId) => {
+  try {
+    const response = await instance.delete("/incomes/" + incomeId)
+    return response.status;
+  } catch (error) {
+    console.error("Error adding data: ", error);
+    throw error;
+  }
+};
