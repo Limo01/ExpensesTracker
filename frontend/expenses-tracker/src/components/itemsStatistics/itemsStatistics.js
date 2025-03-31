@@ -53,6 +53,7 @@ function ItemsStatistics({expensesData, incomesData, expensesCategories}) {
         <PieChart
           series={[{
             data: prepareSeriesForPieChart(expensesData, incomesData, expensesCategories),
+            valueFormatter: (point) => {return point.value.toFixed(2) + "€"},
             innerRadius: 0,
             outerRadius: 70,
             highlightScope: { fade: 'global', highlight: 'item' },
