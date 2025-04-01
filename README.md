@@ -1,7 +1,7 @@
 # ExpensesTracker
 Full-stack application written in Python/Flask + MongoDB for the _backend_ and React for the _frontend_.
 
-Expense Tracker is an application for managing the expenses and the earning and to keep track of the final balance.
+ExpensesTracker is an application for managing the expenses and the earning and to keep track of the final balance.
 
 # Run locally
 
