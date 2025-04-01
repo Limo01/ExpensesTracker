@@ -32,5 +32,5 @@ npm install
 
 # Screenshots
 <img src="img/frontend.png"/>
-<img src="img/frontend2.jpg"/>
-<img src="img/frontend3.jpg"/>
+<img src="img/frontend2.JPG"/>
+<img src="img/frontend3.JPG"/>
